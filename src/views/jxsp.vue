@@ -1,7 +1,7 @@
 <template>
   <div class="other-content">
     <ol>
-      <li @click="toDetails()" v-for="(item,index) in 3" :key="index">教学视频</li>
+      <li @click="toDetails()" v-for="(item,index) in jxspList" :key="index">{{item.title}}</li>
     </ol>
   </div>
 </template>
@@ -10,7 +10,7 @@
 export default {
   data() {
     return {
-    //   xwggList: window.global.xwggList
+     jxspList:window.global.jxspList
     }
   },
   methods: {

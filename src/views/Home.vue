@@ -2,7 +2,7 @@
   <div class="home">
     <div class="top">
       <div class="banner">
-        <el-carousel height="250px" indicator-position="outside">
+        <el-carousel height="250px" indicator-position="none">
           <el-carousel-item v-for="item in imgList" :key="item">
             <!-- <h3 class="small">{{ item }}</h3> -->
             <img :src="item.img" alt />

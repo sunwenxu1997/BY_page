@@ -87,6 +87,33 @@ window.global = {
             content: '新闻公告内容4'
         },
     ],
+    //资料下载部分
+    zlxzList: [
+        {
+            title: '资料下载1'
+        },
+        {
+            title: '资料下载2'
+        },
+        {
+            title: '资料下载3'
+        },
+        {
+            title: '资料下载4'
+        },
+    ],
+    //教学视频部分
+    jxspList:[
+        {
+            title:'教学视频1'
+        },
+        {
+            title:'教学视频2'
+        },
+        {
+            title:'教学视频3'
+        },
+    ],
     //在线测试部分
     zxcsList: [
         {
