@@ -28,4 +28,19 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.other-content {
+  margin: 0 auto;
+  width: var(--wWidth);
+  border: 2px dashed #ccc;
+  padding: 10px 40px;
+  min-height: 70vh;
+}
+.other-content li {
+  margin: 10px 0;
+  cursor: pointer;
+}
+.other-content li:hover {
+  text-decoration: underline;
+  color:var(--color);
+}
 </style>

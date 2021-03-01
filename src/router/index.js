@@ -16,24 +16,29 @@ const routes = [
     component: () => import( '../views/Details.vue')
   },
   {
+    path: '/video',
+    name: 'video',
+    component: () => import( '../views/Video.vue')
+  },
+  {
     path: '/xwgg',
     name: 'xwgg',
-    component: () => import( '../views/About.vue')
+    component: () => import( '../views/xwgg.vue')
   },
   {
     path: '/zxcs',
     name: 'zxcs',
-    component: () => import( '../views/About.vue')
+    component: () => import( '../views/zxcs.vue')
   },
   {
     path: '/zlxz',
     name: 'zlxz',
-    component: () => import( '../views/About.vue')
+    component: () => import( '../views/zlxz.vue')
   },
   {
     path: '/jxsp',
     name: 'jxsp',
-    component: () => import( '../views/About.vue')
+    component: () => import( '../views/jxsp.vue')
   },
   {
     path: '/sshd',

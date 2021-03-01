@@ -2,9 +2,11 @@
   <div class="home">
     <div class="top">
       <div class="banner">
-        <el-carousel height="250px">
-          <el-carousel-item v-for="item in 4" :key="item">
-            <h3 class="small">{{ item }}</h3>
+        <el-carousel height="250px" indicator-position="outside">
+          <el-carousel-item v-for="item in imgList" :key="item">
+            <!-- <h3 class="small">{{ item }}</h3> -->
+            <img :src="item.img" alt />
+            <div class="cover">{{item.title}}</div>
           </el-carousel-item>
         </el-carousel>
       </div>
@@ -15,35 +17,62 @@
             @click="toDetails(item.content)"
             v-for="item in rmtjList"
             :key="item.id"
-          >
-            {{ item.title }}
-          </li>
+          >{{ item.title }}</li>
         </ul>
       </div>
     </div>
+    <more-card :title="'新闻公告'" @toMore="toMore('xwgg')">
+      <div class="content">
+        <p
+          @click="toDetails(item.content)"
+          v-for="(item,index) in xwggList"
+          :key="index"
+        >{{item.title}}</p>
+      </div>
+    </more-card>
+    <more-card :title="'资料下载'" @toMore="toMore('zlxz')">
+      <div class="content">
+        <p v-for="(i,index) in 5" :key="index" @click="down">资料下载</p>
+      </div>
+    </more-card>
   </div>
 </template>
 
 <script>
+import MoreCard from '../components/MoreCard.vue'
+import { toDown } from '../utils/down.js'
 // @ is an alias to /src
 export default {
-  name: "Home",
+  name: 'Home',
+  components: {
+    MoreCard
+  },
   data() {
     return {
       rmtjList: window.global.rmtjList,
-    };
+      xwggList: window.global.xwggList,
+      imgList: window.global.bannerList
+    }
   },
   methods: {
     toDetails(content) {
       this.$router.push({
-        name: "details",
-        params: {
-          content: content,
-        },
-      });
+        path: '/details',
+        query: {
+          content: content
+        }
+      })
     },
-  },
-};
+    toMore(type) {
+      this.$router.push({
+        name: type
+      })
+    },
+    down() {
+      toDown()
+    }
+  }
+}
 </script>
 <style scoped>
 .el-carousel {
@@ -80,6 +109,23 @@ export default {
   flex-grow: 1;
   text-align: center;
   margin-right: 20px;
+  position: relative;
+}
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.banner .cover {
+  text-align: left;
+  width: 100%;
+  padding: 10px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.548);
+  color: white;
+  z-index: 99;
 }
 .hot {
   flex-grow: 1;

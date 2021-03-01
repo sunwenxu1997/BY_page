@@ -1,6 +1,6 @@
 <template>
   <div class="details">
-      <div  v-html="$route.params.content"></div>
+      <div  v-html="$route.query.content"></div>
   </div>
 </template>
 
